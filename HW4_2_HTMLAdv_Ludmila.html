@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.addEventListener("load",init,false);
+        function init(){
+            let canvas = document.getElementById("canvas");
+            let context = canvas.getContext("2d");
+            //rote Fane
+            context.beginPath();
+            context.fillStyle='red';
+            context.strokeStyle="grey";
+            context.shadowColor = "rgb(59, 52, 52)";
+            context.shadowOffsetX = 5;
+            context.shadowOffsetY = 5;
+            //Степень размытия
+            context.shadowBlur = 10;
+            let gradient = context.createRadialGradient(150, 150, 10, 150, 150, 200);
+            gradient.addColorStop(0, 'red');
+            context.fillStyle = gradient;
+            context.moveTo(50, 100);
+            context.bezierCurveTo(125, 145, 335, 10, 465, 60);
+            context.lineTo(465, 360);  
+            context.bezierCurveTo(335, 310, 125, 445, 50, 400);
+            context.lineTo(50, 100);            
+            context.closePath();
+            context.fill();            
+            //clear white
+            context.clearRect(135, 50, 235, 435);
+            context.stroke();
+
+            //image
+            context.beginPath();
+            context.fillStyle='red';
+            context.strokeStyle="red";
+            context.shadowOffsetX = 0;
+            context.shadowOffsetY = 0;
+            context.shadowBlur = 0;
+            context.lineTo(242,339);
+            context.lineTo(242,299);
+            context.lineTo(201,303);
+            context.lineTo(214,294);
+            context.lineTo(180,253);
+            context.lineTo(197,238);
+            context.lineTo(181,209);
+            context.lineTo(208,219);
+            context.lineTo(215,203);
+            context.lineTo(232,224);
+            context.lineTo(204,148);
+            context.lineTo(228,158);
+            context.lineTo(248,123);
+            context.lineTo(264,155);
+            context.lineTo(290,137);
+            context.lineTo(276,219);
+            context.lineTo(303,183);
+            context.lineTo(304,199);
+            context.lineTo(329,184);
+            context.lineTo(327,214);
+            context.lineTo(340,222);
+            context.lineTo(279,286);
+            context.lineTo(292,295);
+            context.lineTo(245,299);
+            context.lineTo(245,339);
+            context.closePath();
+            context.fill(); 
+            context.stroke();
+
+        }
+    </script>
+    <style>
+        canvas{
+            border: 10px solid rgb(59, 52, 52);
+        }
+    </style>
+</head>
+<body>
+    <!-- Задание 2 -->
+<!-- С помощью рассмотренных методов – нарисуйте на холсте изображение: -->
+<canvas id="canvas" height="600px" width="600px"></canvas>
+</body>
+</html>
