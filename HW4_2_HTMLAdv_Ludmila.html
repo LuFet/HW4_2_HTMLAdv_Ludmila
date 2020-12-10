@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+
+    </style>
     <script>
         window.addEventListener("load",init,false);
         function init(){
@@ -18,8 +21,14 @@
             context.shadowOffsetY = 5;
             //Степень размытия
             context.shadowBlur = 10;
-            let gradient = context.createRadialGradient(150, 150, 10, 150, 150, 200);
-            gradient.addColorStop(0, 'red');
+            let gradient = context.createLinearGradient(40, 50, 500, 50);            
+            gradient.addColorStop(0,"red");
+            gradient.addColorStop(0.20,"red");
+            gradient.addColorStop(0.25,"white");   
+            gradient.addColorStop(0.30,"white");            
+            gradient.addColorStop(0.65,"white");
+            gradient.addColorStop(0.7,"red"); 
+            gradient.addColorStop(1,"red"); 
             context.fillStyle = gradient;
             context.moveTo(50, 100);
             context.bezierCurveTo(125, 145, 335, 10, 465, 60);
@@ -29,13 +38,14 @@
             context.closePath();
             context.fill();            
             //clear white
-            context.clearRect(135, 50, 235, 435);
-            context.stroke();
-
+            // context.clearRect(135, 50, 235, 435);
+            // context.stroke();
+            //gradient.addColorStop(0, 'red');
+            //gradient.addColorStop(0.3, 'white');    
             //image
             context.beginPath();
             context.fillStyle='red';
-            context.strokeStyle="red";
+            context.strokeStyle="red";            
             context.shadowOffsetX = 0;
             context.shadowOffsetY = 0;
             context.shadowBlur = 0;
