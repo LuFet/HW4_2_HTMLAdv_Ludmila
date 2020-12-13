@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>    
+</head>
+<body style="text-align: center;">
+    <canvas id="canvas" width="500" height="500" style="border:1px solid #d3d3d3;"></canvas>
+    <script>
+        // Параметры         
+        var delta = 200;
+        var x0=100;
+        var y0=100;
+
+        var canvas = document.getElementById("canvas");
+        var context = canvas.getContext("2d");
+        function drawBoard(){
+            //context.moveTo(x0, y0);
+            for (var i = 1; i < 10; i ++) {
+                console.log(i);
+                context.moveTo(x0+i*20, y0);
+                context.lineTo(x0+i*20, y0+delta);
+            }
+        
+            for (var j = 1; j < 10; j ++) {
+                console.log(j);
+                context.moveTo(x0, y0+j*20);
+                context.lineTo(x0+delta,y0+j*20);
+            }
+            context.strokeStyle = "grey";
+            context.stroke();
+        }
+        
+        drawBoard();
+        </script>
+</body>
+</html>
